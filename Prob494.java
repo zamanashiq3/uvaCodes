@@ -12,7 +12,7 @@ public class Prob494 {
 		String line = "";
 		while (scanner.hasNext()) {
 			line = scanner.nextLine();
-			String[] words = line.replaceAll("[^a-zA-Z ]", "").split("\\s+");
+			String[] words = line.replaceAll("[^a-zA-Z 0-9]", "").split("\\s+");
 			System.out.println(words.length);
 		}
 
