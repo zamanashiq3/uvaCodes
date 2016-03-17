@@ -5,13 +5,16 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Scanner;
 
 public class Prob11854 {
 
+	private static Scanner reader;
+
 	public static void main(String[] args) throws IOException{
-		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+		reader = new Scanner(System.in);
 		String line = "";
-		while (!(line=reader.readLine().toString()).equals("0 0 0")) {
+		while (!(line=reader.nextLine().toString()).equals("0 0 0")) {
 			String[] numbers = line.split(" ");
 			ArrayList<Integer> list = new ArrayList<Integer>();
 			for (String s: numbers) {
