@@ -1,8 +1,6 @@
 package uvaProblems;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.Scanner;
 
 public class Prob10812 {
@@ -27,4 +25,3 @@ public class Prob10812 {
 
 	}
 
-}
