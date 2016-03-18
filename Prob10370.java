@@ -1,32 +1,30 @@
 package uvaProblems;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Prob10370 {
 	public static void main(String[] args) throws IOException{
-		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-		int n = Integer.parseInt(reader.readLine().toString());
-		
-		while (n--!=0) {
-			ArrayList<Double> list = new ArrayList<Double>();
-			String[] lines = reader.readLine().toString().split(" ");
-			double sum =0;
-			for (int i = 1; i < lines.length; i++) {
-				list.add(Double.parseDouble(lines[i]));
-				sum+=Double.parseDouble(lines[i]);
-			}
-			double mean,count=0;
-			mean=sum/list.size();
-			for (Double d: list) {
-				if (d>=mean) {
-					count++;
-				}
-			}
-			System.out.format("%.3f",(count/list.size()*100));
-			System.out.println("%");
-		}
+		Scanner scanner = new Scanner(System.in);
+
+        int C = scanner.nextInt();
+        while (C-- > 0) {
+            int N = scanner.nextInt();
+            int[] arry = new int[N];
+            double avg = 0.0;
+            for (int i = 0; i < N; ++i) {
+                arry[i] = scanner.nextInt();
+                avg += arry[i];
+            }
+            avg /= N;
+            int count = 0;
+            for (int i = 0; i < N; ++i)
+                if (arry[i] > avg)
+                    ++count;
+            System.out.printf( "%.3f", 100.0 * count / N);
+            System.out.println("%");
+        }
+        scanner.close();
+        System.exit(0);
 	}
 }
