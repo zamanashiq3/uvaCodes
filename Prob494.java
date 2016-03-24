@@ -4,11 +4,11 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class Prob494 {
-    public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
+    public static void main(String[] args) throws IOException{
+        Scanner scanner = new Scanner(System.in);
 
-        while (in.hasNextLine()) {
-            String line = in.nextLine();
+        while (scanner.hasNextLine()) {
+            String line = scanner.nextLine();
             int cnt = 0;
             int i = 0;
             while (i < line.length()) {
@@ -20,5 +20,7 @@ public class Prob494 {
             }
             System.out.println(cnt);
         }
+        scanner.close();
+        System.exit(0);
     }
 } 
