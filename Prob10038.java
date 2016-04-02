@@ -1,18 +1,21 @@
 package uvaProblems;
 
-import java.util.*;
+import java.io.IOException;
+import java.util.Arrays;
+import java.util.Scanner;
+
 
 public class Prob10038{
-    public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
+    public static void main(String[] args) throws IOException{
+        Scanner scanner = new Scanner(System.in);
 
-        while (in.hasNextInt()) {
-            int n = in.nextInt();
+        while (scanner.hasNextInt()) {
+            int n = scanner.nextInt();
             int[] seq = new int[n];
             int[] dif = new int[n - 1];
 
             for (int i = 0; i < n; ++i)
-                seq[i] = in.nextInt();
+                seq[i] = scanner.nextInt();
 
             for (int i = 0; i < n - 1; ++i)
                 dif[i] = Math.abs(seq[i + 1] - seq[i]);
@@ -24,5 +27,7 @@ public class Prob10038{
 
             System.out.println((!valid ? "Not j" : "J") + "olly");
         }
+        scanner.close();
+        System.exit(0);
     }
 }
